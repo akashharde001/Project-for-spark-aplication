@@ -11,7 +11,7 @@ spark = SparkSession.builder\
 sc=spark.sparkContext
 
 # Read the input file and Calculating words count
-text_file = sc.textFile("firstprogram.txt")
+text_file = sc.textFile("new.txt")
 counts = text_file.flatMap(lambda line: line.split(" ")) \
                             .map(lambda word: (word, 1)) \
                            .reduceByKey(lambda x, y: x + y)
